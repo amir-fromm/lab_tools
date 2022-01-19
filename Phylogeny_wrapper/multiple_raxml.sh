@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#
 module load RAxML/8.2.9
 DIR=$1
 pwd=$(pwd)
