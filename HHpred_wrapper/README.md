@@ -38,7 +38,7 @@ Aggragate a tsv file to a csv file that saves required information about the gen
 The output is a csv file when each line is a pdb or a pfam result of one gene, and an aggaragation of the description or accession number (hit) of all the results for the gene in the tsv file, saparated by ' | '.
 Because the code aggragate all the results for the gene, it is better to take only the best hits for each gene.
 
-Optional codes to run before:
+#### Optional codes to run prior to running this code:
 Combine the tsv files into one file:
 ```
 awk '(NR == 1) || (FNR > 1)' output/*.tsv > summary_hhpred_pdb_pfam.tsv
