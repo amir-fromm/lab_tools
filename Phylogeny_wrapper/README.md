@@ -26,7 +26,7 @@ The first argument must be the folder of the processed files, in a .fas format
 
 The characters are replaced as follows:
 ##### )(][' : Removed
-##### :,; : A space character
+##### :,; : Replaced with "_"
            
 ## multiple_RAXML_AA.sh
 Accepts multiple AA multiple-sequence-alignment files, the output of MAFFT, with a .fas suffix.
