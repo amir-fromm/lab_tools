@@ -9,6 +9,19 @@ The files should bew executed in the order they are listed.
 
 ### 01.run_hhsearch_pdb_pfam.sh
 Searches a large number of saparated protein sequences against databases in WEXAC.
+
+#### Optional codes to run before:
+split a large multi-fasta file to saparated fasta files with one sequence in each file:
+```
+cat multi-fasta_file.fasta |\awk '/^>/ {if(N>0) printf("\n"); printf("%s\n",$0);++N;next;} { printf("%s",$0);} END {printf("\n");}' |\split -l 2 --additional-suffix=.faa - seq_
+```
+name each fasta file be its header:
+```
+for i in *.faa; do 
+     mv $i $(head -1 $i | cut -f1 -d ' '| tr -d '>' |tr -d '\r').faa
+done
+```
+
 The search is limited to 250,000 MB of required memory.
 The code should be executed using bash inside the folder that contains the saparated sequences.
 The output is a folder named output, with .hhr files in the name of the sequences.
