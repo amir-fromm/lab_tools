@@ -5,7 +5,7 @@ Created on Wed Dec  9 15:52:40 2020
 @author: amirz
 """
 import glob, os
-
+#
 out_path = r"\\data.wexac.weizmann.ac.il\vardi\Collaboration\compare_viruses\phylogeny\new_clusters\output\selection"
 os.chdir(out_path)
 
