@@ -8,7 +8,9 @@ The wrapper searches a large number of saparated protein sequences against datab
 The files must be executed in the order they are listed.
 
 ### 01.run_hhsearch_pdb_pfam.sh
-Searches a large number of saparated protein sequences against databases in WEXAC.
+Searches a large number of saparated protein sequences against databases in WEXAC, using hhpred.
+The search is limited to 250,000 MB of required memory.
+The code should be executed using bash inside a folder that contains saparated sequences, in .faa format.
 
 #### Optional codes to run before:
 split a large multi-fasta file to saparated faa files with one sequence in each file:
@@ -22,13 +24,12 @@ for i in *.faa; do
 done
 ```
 
-The search is limited to 250,000 MB of required memory.
-The code should be executed using bash inside the folder that contains the saparated sequences, in .faa format.
+
 The output is a folder named output, with .hhr files in the name of the sequences.
 
 ### 02.parsing_hhpred_limited.sh
 Parse the .hhr files into tsv files, using the python code: parse_hhpred_results.py
-The search is limited to 300,000 MB of required memory.
+The code is limited to 300,000 MB of required memory.
 The file should be executed using bash inside the folder that contains the saparated sequences, as the previous code.
 The output is a matching .tsv file for each .hhr file created previously.
 
@@ -58,3 +59,12 @@ example:
 ```
 python aggragate_hhpred_new.py --in_file top5_sig_pdb_pfam.tsv --out_file top5_sig_pdb_pfam --information "hit"
 ```
+### multiple_blash.sh
+#### This is an optional code
+Searches a large number of saparated protein sequences against databases in WEXAC, using blast.
+Similar to the HHpred wrapper, the code should be executed using bash inside a folder that contains saparated sequences, in .faa format.
+The output is a .tsv file for each .faa file.
+The code is limited to 300,000 MB of required memory.
+
+
+
