@@ -5,7 +5,7 @@
 
 The wrapper searches a large number of saparated protein sequences against databases in WEXAC, then parse the results and aggregate them into a csv.
 
-The files should bew executed in the order they are listed.
+The files must be executed in the order they are listed.
 
 ### 01.run_hhsearch_pdb_pfam.sh
 Searches a large number of saparated protein sequences against databases in WEXAC.
